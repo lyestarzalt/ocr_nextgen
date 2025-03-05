@@ -1,0 +1,30 @@
+/* Layout utility classes following shadcn/ui's patterns */
+.container-wrapper {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 95rem; /* Increased from 90rem for more space */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem; /* Increased padding */
+  padding-right: 2rem;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-height {
+  max-height: calc(100vh - 14rem); /* Adjusted height */
+  overflow-y: auto;
+}
+
+/* Improved grid spacing */
+.content-section > div {
+  gap: 1.75rem; /* More explicit grid gap */
+}
