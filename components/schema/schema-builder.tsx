@@ -24,10 +24,9 @@ import {
 import {
     Collapsible,
     CollapsibleContent,
-    CollapsibleTrigger
 } from '@/components/ui/collapsible';
-import {FieldEditor} from './field-editor';
-import {SchemaFieldItem} from './schema-field-item';
+import {FieldEditor} from '@/components/schema/field-editor';
+import {SchemaFieldItem} from '@/components/schema/schema-field-item';
 import {ScrollArea} from '@/components/ui/scroll-area';
 import {Code} from 'lucide-react';
 

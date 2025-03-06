@@ -10,7 +10,6 @@ import {Card, CardContent} from '@/components/ui/card';
 import {
     Collapsible,
     CollapsibleContent,
-    CollapsibleTrigger
 } from '@/components/ui/collapsible';
 import {Badge} from '@/components/ui/badge';
 import {ChevronDown, ChevronUp, Plus, Trash, Edit} from 'lucide-react';

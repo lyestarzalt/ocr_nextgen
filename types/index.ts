@@ -1,7 +1,6 @@
-// Define the available field types (only using types supported by OpenAI)
 export type FieldType = 'string' | 'number' | 'boolean' | 'array' | 'object';
 
-// Define the schema field structure
+
 export interface SchemaField {
   name: string;
   type: FieldType;
@@ -35,7 +34,6 @@ export interface ProcessResponse {
   extracted_data: ExtractedData;
 }
 
-// Format options for string fields
 export const FORMAT_OPTIONS = [
   { value: 'none', label: 'None' },
   { value: 'email', label: 'Email' },

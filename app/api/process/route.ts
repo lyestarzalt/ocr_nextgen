@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     });
 
     const data = await response.json();
-    
+    console.log(data);
     if (!response.ok) {
       return NextResponse.json(
         { error: data.detail || 'Error processing document' }, 

@@ -4,8 +4,8 @@ import "./globals.css";
 import "../styles/layout-utils.css";
 
 import {ThemeProvider} from "@/components/theme-provider";
-import {Header} from "@/components/header";
-import {Footer} from "@/components/footer";
+import {Header} from "@/components/layout/header";
+import {Footer} from "@/components/layout/footer";
 import {Toaster} from "@/components/ui/sonner";
 
 const geistSans = Geist({

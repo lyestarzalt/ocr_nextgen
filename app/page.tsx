@@ -2,10 +2,10 @@
 
 import {useState} from 'react';
 import {SchemaField, ProcessResponse} from '@/types';
-import {DocumentUpload} from '@/components/document-upload';
-import {DocumentPreview} from '@/components/document-preview';
-import {SchemaBuilder} from '@/components/schema-builder';
-import {ResultsDisplay} from '@/components/results-display';
+import {DocumentUpload} from '@/components/document/document-upload';
+import {DocumentPreview} from '@/components/document/document-preview';
+import {SchemaBuilder} from '@/components/schema/schema-builder';
+import {ResultsDisplay} from '@/components/results/results-display';
 import {Sparkles} from 'lucide-react';
 import confetti from 'canvas-confetti';
 import {toast} from "sonner";
@@ -86,10 +86,8 @@ export default function Home() {
       const data = await response.json() as ProcessResponse;
       setResults(data);
 
-      // Show success notification
       toast.success("Document processed successfully");
 
-      // Shoot confetti
       confetti({
         particleCount: 100,
         spread: 70,
