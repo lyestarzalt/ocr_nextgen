@@ -58,27 +58,15 @@ export function SchemaBuilder({
             return; // Keep current schema
         }
 
-        // Option to merge or replace
-        const mergeStrategy = confirm('Do you want to merge this template with existing fields?');
+        // Get the template fields
+        const templateFields = SCHEMA_TEMPLATES[templateName as keyof typeof SCHEMA_TEMPLATES] || [];
 
-        if (mergeStrategy) {
-            // Merge template fields, avoiding duplicates
-            const templateFields = SCHEMA_TEMPLATES[templateName as keyof typeof SCHEMA_TEMPLATES] || [];
-            const newFields = [...schemaFields];
+        // Directly replace the existing fields
+        setSchemaFields([...templateFields]);
 
-            templateFields.forEach(templateField => {
-                const existingFieldIndex = newFields.findIndex(f => f.name === templateField.name);
-                if (existingFieldIndex === -1) {
-                    newFields.push(templateField);
-                }
-            });
-
-            setSchemaFields(newFields);
-        } else {
-            setSchemaFields(SCHEMA_TEMPLATES[templateName as keyof typeof SCHEMA_TEMPLATES] || []);
-        }
+        // Reset template selection
+        setSelectedTemplate('custom');
     };
-
     // Start adding a new field
     const startAddField = () => {
         setIsAddingField(true);
@@ -131,7 +119,7 @@ export function SchemaBuilder({
             }
 
             // Create the property schema
-            const propSchema: Record<string, any> = {
+            const propSchema: Record<string, unknow> = {
                 type: field.type
             };
 
